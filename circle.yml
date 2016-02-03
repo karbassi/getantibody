@@ -15,4 +15,4 @@ deployment:
       - docker push "karbassi/getantibody:$CIRCLE_BUILD_NUM"
       - sed -i'' -e "s;%BUILD_NUM%;$CIRCLE_BUILD_NUM;g" ./.deploy/Dockerrun.aws.json
       - cd .deploy && eb init -p docker -r us-east-1 getantibody
-      - cd .deploy && eb deploy -l $CIRCLE_BUILD_NUM
+      - cd .deploy && eb deploy -l $CIRCLE_BUILD_NUM getantibody
